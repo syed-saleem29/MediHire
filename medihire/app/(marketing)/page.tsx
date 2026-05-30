@@ -172,7 +172,7 @@ export default function LandingPage() {
                   borderRadius: 3,
                 }}
               >
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h6" fontWeight="bold" gutterBottom>
                   {feature.title}
                 </Typography>
                 <Typography color="text.secondary">{feature.desc}</Typography>
@@ -183,192 +183,211 @@ export default function LandingPage() {
       </Container>
 
       {/* Jobs Section */}
-    <Box
-      sx={{
-        py: { xs: 8, md: 12 },
-        textAlign: "center",
-        bgcolor: "primary.light",
-      }}
-    >
-      <Container maxWidth="md">
-
-        {/* ================= TITLE ================= */}
-        <Typography variant="h3" gutterBottom>
-          Jobs
-        </Typography>
-
-        <Typography variant="h6" color="text.secondary" mb={4}>
-          Find your Dream Healthcare Jobs
-        </Typography>
-
-        {/* ================= SEARCH ================= */}
-        <Box display="flex" justifyContent="center" mb={5}>
-          <TextField
-            placeholder="Search jobs"
-            fullWidth
-            sx={{
-              maxWidth: 500,
-              bgcolor: "background.paper",
-              borderRadius: 5,
-              "& .MuiOutlinedInput-root": {
-                borderRadius: 5,
-                "& fieldset": {
-                  borderColor: "primary.main",
-                  borderWidth: 2,
-                },
-                "&:hover fieldset": {
-                  borderColor: "primary.main",
-                },
-                "&.Mui-focused fieldset": {
-                  borderColor: "primary.main",
-                },
-              },
-            }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon color="action" />
-                </InputAdornment>
-              ),
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    color="primary"
-                    sx={{
-                      bgcolor: "primary.main",
-                      color: "primary.contrastText",
-                      "&:hover": {
-                        bgcolor: "primary.dark",
-                      },
-                    }}
-                  >
-                    <SearchIcon />
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-          />
-        </Box>
-
-        {/* ================= EXPLORE BY ================= */}
-        <Typography
-          variant="h6"
-          fontWeight="bold"
-          sx={{
-            display: "inline-block",
-            borderBottom: 3,
-            borderColor: "primary.main",
-            mb: 4,
-          }}
-        >
-          Explore By
-        </Typography>
-
-        {/* ================= CATEGORY CIRCLES ================= */}
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: 3,
-            mb: 6,
-          }}
-        >
-          {jobsData.map((job, index) => (
-            <Box
-              key={index}
-              component={Link}
-              href={job.href}
-              sx={{
-                textDecoration: "none",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                width: { xs: 120, sm: 150 },
-                height: { xs: 120, sm: 150 },
-                border:"2px solid",
-                borderColor:"primary.main",
-                borderRadius: "50%",
-                bgcolor: "background.paper",
-                boxShadow: 1,
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  boxShadow: 4,
-                  transform: "translateY(-6px)",
-                },
-              }}
-            >
-              <Box
-                component="img"
-                src={job.imgSrc}
-                alt={job.alt}
-                sx={{
-                  width: 40,
-                  height: 40,
-                  mb: 1.5,
-                }}
-              />
-
-              <Typography
-                variant="body2"
-                color="text.primary"
-                fontWeight={500}
-              >
-                {job.label}
-              </Typography>
-            </Box>
-          ))}
-        </Box>
-
-        {/* ================= BOTTOM INFO STRIP ================= */}
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: 3,
-            borderTop: 1,
-            borderColor: "divider",
-            pt: 4,
-          }}
-        >
-          <Typography variant="body2" color="text.secondary">
-            Explore healthcare jobs anytime!
+      <Box
+        sx={{
+          py: { xs: 8, md: 12 },
+          textAlign: "center",
+          bgcolor: "primary.light",
+        }}
+      >
+        <Container maxWidth="md">
+          {/* ================= TITLE ================= */}
+          <Typography variant="h3" gutterBottom>
+            Jobs
           </Typography>
 
-          <Box
-            component={Link}
-            href="#"
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              gap: 1,
-              textDecoration: "none",
-              color: "text.primary",
-            }}
-          >
-            <SmartphoneIcon color="action" />
-            <Typography variant="body2" fontWeight={600}>
-              Get App
-            </Typography>
+          <Typography variant="h6" color="text.secondary" mb={4}>
+            Find your Dream Healthcare Jobs
+          </Typography>
+
+          {/* ================= SEARCH ================= */}
+          <Box display="flex" justifyContent="center" mb={5}>
+            <TextField
+              placeholder="Search jobs"
+              fullWidth
+              sx={{
+                maxWidth: 500,
+                bgcolor: "background.paper",
+                borderRadius: 5,
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: 5,
+                  "& fieldset": {
+                    borderColor: "primary.main",
+                    borderWidth: 2,
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "primary.main",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "primary.main",
+                  },
+                },
+              }}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon color="action" />
+                  </InputAdornment>
+                ),
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      color="primary"
+                      sx={{
+                        bgcolor: "primary.main",
+                        color: "primary.contrastText",
+                        "&:hover": {
+                          bgcolor: "primary.dark",
+                        },
+                      }}
+                    >
+                      <SearchIcon />
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
           </Box>
 
-          <Button
-            variant="outlined"
+          {/* ================= EXPLORE BY ================= */}
+          <Typography
+            variant="h6"
+            fontWeight="bold"
             sx={{
-              borderRadius: 5,
-              textTransform: "none",
+              display: "inline-block",
+              borderBottom: 3,
+              borderColor: "primary.main",
+              mb: 4,
             }}
           >
-            + Post a Job
-          </Button>
-        </Box>
+            Explore By
+          </Typography>
 
-      </Container>
-    </Box>
+          {/* ================= CATEGORY CIRCLES ================= */}
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: 3,
+              mb: 6,
+            }}
+          >
+            {jobsData.map((job, index) => (
+              <Box
+                key={index}
+                component={Link}
+                href={job.href}
+                sx={{
+                  textDecoration: "none",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: { xs: 120, sm: 150 },
+                  height: { xs: 120, sm: 150 },
+                  border: "2px solid",
+                  borderColor: "primary.main",
+                  borderRadius: "50%",
+                  bgcolor: "background.paper",
+                  boxShadow: 1,
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    boxShadow: 4,
+                    transform: "translateY(-6px)",
+                  },
+                }}
+              >
+                <Box
+                  component="img"
+                  src={job.imgSrc}
+                  alt={job.alt}
+                  sx={{
+                    width: 40,
+                    height: 40,
+                    mb: 1.5,
+                  }}
+                />
 
+                <Typography
+                  variant="body2"
+                  color="text.primary"
+                  fontWeight={500}
+                  sx={{
+                    wordWrap: "break-word",
+                    overflowWrap: "break-word",
+                    whiteSpace: "normal",
+                    width: "100%",
+                    maxWidth: "100%",
+                    textAlign: "center",
+                    fontWeight: "600",
+                    lineHeight: 1.2,
+                    fontSize: { xs: "11px", sm: "12px" },
+                    px: 0.5,
+                    // For multi-line ellipsis (2 lines max)
+                    display: "-webkit-box",
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    // Fallback for non-webkit browsers
+                    maxHeight: "2.4em",
+                  }}
+                >
+                  {job.label}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+
+          {/* ================= BOTTOM INFO STRIP ================= */}
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 3,
+              borderTop: 1,
+              borderColor: "divider",
+              pt: 4,
+            }}
+          >
+            <Typography variant="body2" color="text.secondary">
+              Explore healthcare jobs anytime!
+            </Typography>
+
+            <Box
+              component={Link}
+              href="#"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+                textDecoration: "none",
+                color: "text.primary",
+              }}
+            >
+              <SmartphoneIcon color="action" />
+              <Typography variant="body2" fontWeight={600}>
+                Get App
+              </Typography>
+            </Box>
+
+            <Button
+              variant="outlined"
+              sx={{
+                borderRadius: 5,
+                textTransform: "none",
+              }}
+            >
+              + Post a Job
+            </Button>
+          </Box>
+        </Container>
+      </Box>
+
+      
     </Box>
   );
 }
