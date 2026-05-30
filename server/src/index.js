@@ -8,6 +8,7 @@ const connectDB = require("./config/db");
 const authRoutes = require("./routes/auth");
 const jobRoutes = require("./routes/jobs");
 const applicationRoutes = require("./routes/applications");
+const userRoutes = require("./routes/users");
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(passport.initialize());
 app.use("/api/auth", authRoutes);
 app.use("/api/jobs", jobRoutes);
 app.use("/api/applications", applicationRoutes);
+app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => res.json({ message: "MediHire API is running" }));
 
